@@ -1,0 +1,22 @@
+# FastAPI & Server
+fastapi==0.115.0
+uvicorn[standard]==0.30.0
+python-multipart==0.0.9
+websockets==12.0
+
+# Binary Analysis
+pefile==2023.2.7
+pyelftools==0.31
+capstone==5.0.1
+macholib==1.16.3
+r2pipe==1.9.4
+
+# AI Providers
+openai==1.50.0
+anthropic==0.34.0
+
+# Utilities
+python-magic==0.4.27
+python-dotenv==1.0.1
+aiofiles==24.1.0
+hashlib-additional==1.0.1
