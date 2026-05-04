@@ -4,6 +4,7 @@ Loads environment variables and provides default settings.
 """
 
 import os
+from typing import Optional
 from dotenv import load_dotenv
 
 load_dotenv()
@@ -39,7 +40,7 @@ class Config:
                bool(cls.ANTHROPIC_API_KEY and cls.ANTHROPIC_API_KEY != "sk-ant-your-anthropic-key-here")
 
     @classmethod
-    def get_active_provider(cls) -> str | None:
+    def get_active_provider(cls) -> Optional[str]:
         """Return the active AI provider, or None if no key is set."""
         if cls.AI_PROVIDER == "anthropic" and cls.ANTHROPIC_API_KEY:
             return "anthropic"

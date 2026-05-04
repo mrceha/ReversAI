@@ -3,136 +3,115 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="ReversAI — AI-powered automated reverse engineering and security analysis tool. Drop any binary for instant vulnerability reports.">
-    <title>ReversAI — AI Reverse Engineering</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <title>ReversAI // Deep Binary Analysis</title>
+    <meta name="description" content="AI-powered automated reverse engineering.">
     <link rel="stylesheet" href="/style.css">
 </head>
 <body>
-    <!-- Animated Background -->
-    <div class="bg-grid"></div>
-    <div class="bg-glow bg-glow-1"></div>
-    <div class="bg-glow bg-glow-2"></div>
+    <!-- Background Architecture -->
+    <div class="cyber-grid"></div>
+    <div class="ambient-glows">
+        <div class="glow-orb cyan"></div>
+        <div class="glow-orb purple"></div>
+    </div>
 
     <!-- Header -->
-    <header id="main-header">
-        <div class="header-content">
-            <div class="logo">
-                <div class="logo-icon">
-                    <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M20 4L36 12V28L20 36L4 28V12L20 4Z" stroke="url(#grad1)" stroke-width="2" fill="none"/>
-                        <path d="M20 10L30 15.5V26.5L20 32L10 26.5V15.5L20 10Z" stroke="url(#grad2)" stroke-width="1.5" fill="none" opacity="0.6"/>
-                        <circle cx="20" cy="20" r="4" fill="url(#grad1)"/>
-                        <defs>
-                            <linearGradient id="grad1" x1="4" y1="4" x2="36" y2="36">
-                                <stop offset="0%" stop-color="#00f0ff"/>
-                                <stop offset="100%" stop-color="#8b5cf6"/>
-                            </linearGradient>
-                            <linearGradient id="grad2" x1="10" y1="10" x2="30" y2="32">
-                                <stop offset="0%" stop-color="#00f0ff"/>
-                                <stop offset="100%" stop-color="#8b5cf6"/>
-                            </linearGradient>
-                        </defs>
+    <header>
+        <div class="nav-container">
+            <div class="logo-group">
+                <div class="brand-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
                     </svg>
                 </div>
-                <span class="logo-text">Revers<span class="logo-accent">AI</span></span>
+                <div class="brand-text">Revers<span class="text-gradient-accent">AI</span></div>
             </div>
-            <div class="header-status" id="header-status">
-                <span class="status-dot"></span>
-                <span id="status-text">Ready</span>
+            <div class="system-status" id="header-status">
+                <div class="status-indicator"></div>
+                <span id="status-text">SYSTEM READY</span>
             </div>
         </div>
     </header>
 
-    <!-- Main Content -->
     <main>
-        <!-- Upload Section -->
-        <section id="upload-section" class="section active">
-            <div class="hero-text">
-                <h1>AI-Powered <span class="gradient-text">Reverse Engineering</span></h1>
-                <p class="subtitle">Drop any binary, script, or executable. Get an instant security audit powered by AI.</p>
+        <!-- UPLOAD VIEW -->
+        <section id="upload-section" class="view-section active">
+            <div class="hero-header">
+                <h1>Automated Reverse <br> Engineering <span class="text-gradient">Engine</span></h1>
+                <p>Drop any binary or script. The AI will extract context, decompile functions, and hunt for zero-days instantly.</p>
             </div>
-            <div class="dropzone" id="dropzone">
-                <div class="dropzone-content">
-                    <div class="dropzone-icon">
-                        <svg viewBox="0 0 64 64" fill="none">
-                            <path d="M32 8L52 20V44L32 56L12 44V20L32 8Z" stroke="url(#dz1)" stroke-width="1.5" fill="none" class="hex-rotate"/>
-                            <path d="M24 34L32 26L40 34" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
-                            <path d="M32 26V46" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
-                            <defs>
-                                <linearGradient id="dz1" x1="12" y1="8" x2="52" y2="56">
-                                    <stop offset="0%" stop-color="#00f0ff"/>
-                                    <stop offset="100%" stop-color="#8b5cf6"/>
-                                </linearGradient>
-                            </defs>
+
+            <div class="upload-portal" id="dropzone">
+                <div class="portal-frame">
+                    <div class="drop-area">
+                        <div class="scanner-beam"></div>
+                        <svg class="upload-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                            <polyline points="17 8 12 3 7 8"></polyline>
+                            <line x1="12" y1="3" x2="12" y2="15"></line>
                         </svg>
+                        <h2 class="upload-title">Initialize Scan</h2>
+                        <p class="upload-subtitle">Drag & Drop target file here or <button class="browse-btn" id="browse-trigger">Select File</button></p>
+                        
+                        <div class="supported-types">
+                            <span class="type-badge">PE (.exe, .dll)</span>
+                            <span class="type-badge">ELF (.so)</span>
+                            <span class="type-badge">Mach-O</span>
+                            <span class="type-badge">Python</span>
+                            <span class="type-badge">Shell</span>
+                            <span class="type-badge">Java (.jar)</span>
+                        </div>
                     </div>
-                    <p class="dropzone-title">Drop your file here</p>
-                    <p class="dropzone-sub">or <span class="dropzone-browse" id="browse-trigger">browse files</span></p>
-                    <p class="dropzone-formats">PE • ELF • Mach-O • Python • Shell • Java • Any binary</p>
                 </div>
                 <input type="file" id="file-input" hidden>
             </div>
-            <div class="features-grid">
-                <div class="feature-card">
-                    <div class="feature-icon">🔬</div>
-                    <h3>Deep Analysis</h3>
-                    <p>Disassembly, decompilation, string extraction, and import analysis</p>
+
+            <div class="capabilities-grid">
+                <div class="cap-card">
+                    <div class="cap-icon">🧬</div>
+                    <h3>Deep Extraction</h3>
+                    <p>Pulls metadata, hidden strings, dangerous imports, and embedded credentials.</p>
                 </div>
-                <div class="feature-card">
-                    <div class="feature-icon">🛡️</div>
-                    <h3>Security Audit</h3>
-                    <p>ASLR, DEP, PIE, RELRO, canaries, and W^X checks</p>
+                <div class="cap-card">
+                    <div class="cap-icon">⚙️</div>
+                    <h3>Auto-Decompilation</h3>
+                    <p>Leverages Radare2 to disassemble and decompile machine code to readable C.</p>
                 </div>
-                <div class="feature-card">
-                    <div class="feature-icon">🤖</div>
-                    <h3>AI Intelligence</h3>
-                    <p>GPT-4 & Claude analyze code for vulnerabilities and hardening</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">📊</div>
-                    <h3>Risk Report</h3>
-                    <p>Severity-scored findings with actionable recommendations</p>
+                <div class="cap-card">
+                    <div class="cap-icon">🧠</div>
+                    <h3>AI Reasoning</h3>
+                    <p>Feeds context into GPT-4 or Claude to detect logic flaws and memory corruption.</p>
                 </div>
             </div>
         </section>
 
-        <!-- Analysis Progress Section -->
-        <section id="progress-section" class="section">
-            <div class="progress-container">
-                <div class="progress-header">
-                    <div class="analyzing-icon">
-                        <div class="pulse-ring"></div>
-                        <div class="pulse-ring delay-1"></div>
-                        <div class="pulse-ring delay-2"></div>
-                        <div class="core-dot"></div>
-                    </div>
-                    <h2>Analyzing <span id="progress-filename" class="gradient-text">binary.exe</span></h2>
+        <!-- PROGRESS VIEW -->
+        <section id="progress-section" class="view-section">
+            <div class="analysis-dashboard">
+                <div class="target-info">
+                    <div class="target-label">Target Acquired</div>
+                    <div class="target-name text-gradient-accent" id="progress-filename">unknown.exe</div>
                 </div>
-                <div class="progress-bar-container">
-                    <div class="progress-bar" id="progress-bar">
-                        <div class="progress-glow"></div>
+
+                <div class="progress-module">
+                    <div class="progress-track">
+                        <div class="progress-fill" id="progress-bar"></div>
                     </div>
-                    <span class="progress-percent" id="progress-percent">0%</span>
-                </div>
-                <div class="progress-steps" id="progress-steps">
-                    <!-- Steps will be populated dynamically -->
+                    
+                    <div class="terminal-window" id="progress-steps">
+                        <!-- Logs inject here -->
+                    </div>
                 </div>
             </div>
         </section>
 
-        <!-- Report Section -->
-        <section id="report-section" class="section">
-            <div class="report-container" id="report-container">
-                <!-- Report will be rendered dynamically -->
+        <!-- REPORT VIEW -->
+        <section id="report-section" class="view-section">
+            <div id="report-container">
+                <!-- Report injected by JS -->
             </div>
         </section>
     </main>
-
-    <footer>
-        <p>ReversAI v1.0 — Built by <a href="https://github.com/mrceha" target="_blank">mrceha</a></p>
-    </footer>
 
     <script src="/app.js"></script>
 </body>
