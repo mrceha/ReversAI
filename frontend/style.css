@@ -551,3 +551,55 @@ main {
 ::-webkit-scrollbar-track { background: var(--bg-base); }
 ::-webkit-scrollbar-thumb { background: #333; border-radius: 5px; border: 2px solid var(--bg-base); }
 ::-webkit-scrollbar-thumb:hover { background: #555; }
+
+/* Footer */
+footer {
+    margin-top: auto;
+    padding: 3rem 2rem 2rem;
+    text-align: center;
+    border-top: 1px solid var(--border-dim);
+    background: linear-gradient(0deg, rgba(3,3,3,0.8) 0%, transparent 100%);
+    position: relative;
+    z-index: 10;
+}
+.footer-content {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+footer p {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    margin-bottom: 0.25rem;
+}
+footer strong {
+    color: var(--text-primary);
+    font-weight: 600;
+}
+footer a {
+    color: var(--accent-cyan);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+footer a:hover {
+    color: var(--accent-purple);
+    text-decoration: underline;
+}
+.footer-sub {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    margin-top: 0.5rem;
+}
+.heart {
+    color: var(--accent-pink);
+    display: inline-block;
+    animation: heartbeat 1.5s infinite;
+}
+@keyframes heartbeat {
+    0%, 100% { transform: scale(1); }
+    15% { transform: scale(1.2); }
+    30% { transform: scale(1); }
+    45% { transform: scale(1.2); }
+}
